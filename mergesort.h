@@ -1,3 +1,4 @@
+/*
 MIT License
 
 Copyright (c) 2020 alvinalvord
@@ -19,3 +20,12 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+*/
+#ifndef MERGESORT_HEADER
+#define MERGESORT_HEADER
+
+void mergesort (void *arr, 
+	size_t n_elem, size_t size, 
+	int (*comparator)(const void *, const void *));
+
+#endif

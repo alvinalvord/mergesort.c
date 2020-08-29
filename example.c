@@ -1,3 +1,4 @@
+/*
 MIT License
 
 Copyright (c) 2020 alvinalvord
@@ -19,3 +20,31 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+*/
+#include <stdio.h>
+
+#include "mergesort.h"
+
+int
+cmp(const void *a, const void *b)
+{
+	return (int)(*((int *) a) - *((int *) b));
+}
+
+int
+main(int argc, char *argv[])
+{
+	int nelem = 10;
+	int test[nelem];
+	int i;
+	
+	for(i = 0; i < nelem; i++)
+		test[i] = nelem - i;
+	
+	mergesort(test, nelem, sizeof(int), cmp);
+	
+	for(i = 0; i < nelem; i++) 
+		printf("[%2d] %2d\n", i, test[i]);
+	
+	return 0;
+}
